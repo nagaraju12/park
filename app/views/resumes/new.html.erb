@@ -1,0 +1,46 @@
+<%= render :partial => "slider" %>
+<h5>RESUME</h5>
+<div class="img-right">
+ <%= image_tag("ladder.gif", alt: "File Name Fancy", :class=>"img-right", size: "2150*2150")%>
+</div>
+
+
+
+<% if !@resume.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @resume.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @resume, html: { multipart: true } do |f| %>
+  <div class="field">
+   <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+    </div>
+    <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    </div>
+    <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :attachment %>
+    </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<style>
+   div.img-right{
+     float: right;
+
+
+   }
+  </style>

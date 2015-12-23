@@ -1,0 +1,59 @@
+<%= render :partial => "slider" %>
+
+<div class="img-right">
+ <%= image_tag("LAPTOP (1).jpg", alt: "File Name Fancy", :class=>"img-right", size: "2150*2150")%>
+ </div>
+<h5>CONTACT US</h5>
+
+<h5>Corporate Office</h5>
+
+Park Controls & Communications Pvt Ltd.,<br>
+
+Kishan Arcade<br>
+NO 464, 465, 466, New Thippasandra Main Road, HAL 3rd Stage<br>
+Bangalore - 560 075, India<h5>
+<h5>Phone Number & Email</h5>
+Phone : +91-80-2529 2513 / 2529 7199 / 2529 3482<br>
+Fax : 91-80-2528 1716 / 4091 0252<br>
+Email : info@parkcontrols.com
+<p id="notice"><%= notice %></p>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contacts</h1>
+<table class="table table-bordered table-striped">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.address %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>
+<style>
+   div.img-right{
+     float: right;
+   }
+  </style>

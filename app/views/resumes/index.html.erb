@@ -1,0 +1,93 @@
+<%= render :partial => "slider" %>
+<div class="img-right">
+ <%= image_tag("ladder.gif", alt: "File Name Fancy", :class=>"img-right", size: "2150*2150")%>
+</div>
+<h5>CAREER</h5>
+
+Park Controls is a leader in the Avionics and Defense domain. Our clientele include HAL, DRDL, BEL, BHEL and ADE, besides others in the Middle East and emerging markets in Europe.<br>
+
+<h5>Growth Path:</h5>
+
+Excellence in performance at work is rewarded at Park Controls. PCC believes that employees who work hard, and show tangible results should be rewarded. Employees are appraised on their performance regularly to ensure that they are doing well on their jobs. Employees are encouraged to think proactively, develop ideas on their own, and be creative. PCC believes that employees should do what they love and enjoy doing, whether it is designing sophisticated software solutions, developing cutting edge hardware products, meeting and interacting with clients, providing customer service or any of the myriad other tasks that make up an organization’s typical work day.<br>
+
+Employees who show potential are encouraged to take on further responsibilities, so that they can work with more confidence and authority. Regular training programs are arranged on a range of topics, from technology to soft skills, to ensure that our employees constantly update their knowledge base and develop new skills. Employees are also encouraged to research and learn more on areas related to their work by attending workshops, seminars and training programs that are conducted by other leading organizations and consultants.<br>
+
+<h5>Employee Benefits:</h5>
+
+All employees at PCC get a 3-pronged compensation package that includes a salary, incentives and ESOPs (Employee Stock Ownership Plan). This compensation package is a reward system that is directly proportional to the performance of the individual.<br>
+
+While the salaries are on par with industry standards, PCC believes that good work should be rewarded with, more than just a salary. All employees are covered under various performance-related incentive schemes, depending on the department they belong to. This gives the employee an opportunity to earn more, subject to his performance on the job.<br>
+
+ESOPs take care of the long-term needs of employees. Employees can benefit over a period of time because of share value appreciation. All employees, who have worked for a minimum period of one year with the company, are eligible for ESOPs. The number of shares allotted is decided upon by a Compensation Committee, and is dependant upon the position of the employee in the organization hierarchy and his / her performance.<br>
+
+We are also on the verge of introducing a 5-day workweek and flexi-timing work schedules so that employees can enjoy their work and personal lives.<br>
+
+The company also has a flat organization structure that encourages open channels of communication. Employees are free to meet with the management to put forth ideas and suggestions for improvement.<br>
+
+<h5>Opportunities:</h5>
+
+We are an equal opportunity employer.
+
+PCC is in a state of rapid growth and development. PCC is looking for people with a flair and passion for technology, a burning desire to excel, be part of a team of highly competent and focused individuals driving the future of the company.<br>
+
+We require technology professionals for both our Hardware and Software divisions. Ideal candidates would have a BE, ME or higher qualification, with an excellent academic track record of over 70% aggregate throughout their education. Diploma holders with an excellent academic track record are also eligible to apply. Areas of study could be Telecommunication, Instrumentation, Electrical & Electronics, Information Technology, and Computer Science. Both freshers, as well as experienced professionals are welcome to be a part of our rapidly expanding workforce.<br>
+
+<h5>Current Opportunities (click here to view)</h5>
+
+<h5>Kindly include the following details in your resume:</h5>
+
+»  Percentage of marks obtained in class 10, PUC (or class 12), and degree levels.<br>
+
+»  Names of the institutions in which you studied.<br>
+
+»  Year in which each level of education was completed.<br>
+
+»  Chronologically list out all the previous companies you have worked for, clearly mentioning     the period during which you worked for these companies.<br>
+
+»  Current CTC and expected CTC details.<br>
+
+»  Your contact details (phone numbers and mailing address)<br>
+
+<h6>Please send us your detailed profile in Word format (as an attachment) to placement@parkcontrols.com.</h6>
+
+( Or )
+
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<br />
+<table class="table table-bordered table-striped">
+<h6>Upload Your CV</h6>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>E-mail</th>
+      <th>Subject</th>	
+      <th>Download Link</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.name %></td>
+        <td><%= resume.email %></td>
+        <td><%= resume.subject %></td>
+        <td><%= link_to "Download Resume", resume.attachment_url %></td>
+        <td><%= button_to "Delete",  resume, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= link_to "New Resume", new_resume_path, class: "btn btn-primary" %>
+<style>
+   div.img-right{
+     float: right;
+
+
+   }
+  </style>
+
+ 

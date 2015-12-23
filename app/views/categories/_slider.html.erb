@@ -1,0 +1,20 @@
+<ul class="bxslider" i>
+<% @products.each do |i| %>
+<% for image in i.images %>
+<li><%= image_tag image.image.url %></li>
+<% end %>
+<% end %>
+
+</ul>
+<script >
+
+$('.bxslider').bxSlider({
+   slideWidth: 300,
+    minSlides: 2,
+    maxSlides: 3,
+    startSlide: 2,
+  ticker: true,
+  speed: 30000
+});
+</script>
+</ul><marquee bgcolor="litegreen" style="position: relative; left: -5px; padding: 7px; top: -94px; width: 866px;">SPECILIST IN DEFENCE AND AROSPACE ISO 9001:2008

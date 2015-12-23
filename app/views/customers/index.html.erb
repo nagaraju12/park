@@ -1,0 +1,65 @@
+<%= render :partial => "slider" %>
+
+<div class="img-right">
+ <%= image_tag("F18-a.gif", alt: "File Name Fancy", :class=>"img-right", size: "2150*2150")%>
+ </div>
+<h5>CUSTOMER SUPPORT</h5>
+
+Please place your complaints either through the website or address your complaints by fax or postal mail to:
+
+<h5>PARK CONTROLS & COMMUNICATIONS LTD.,<br>
+22, 80 FEET ROAD, HAL 3RD STAGE<br>
+BANGALORE 560 075</h5>
+<h5>PHONE:</h5>.  +91 80 2529 3482 / 2529 2513 / 2529 7199
+<h5>FAX:</h5>  +91 80 2528 1716
+<h5>EMAIL:</h5>  info@parkcontrols.com<br>
+For complaints through our website fill up the following:
+
+<p id="notice"><%= notice %></p>
+
+<h1> Customers</h1>
+<table class="table table-bordered table-striped">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+     
+      <th>Phone</th>
+      <th>Email</th>
+      
+      <th>Quaries</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.company %></td>
+    
+        <td><%= customer.phone %></td>
+        <td><%= customer.email %></td>
+       
+        <td><%= customer.quaries %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
+<style>
+  div.img-right{
+     float:right;
+
+
+  }
+
+
+</style>

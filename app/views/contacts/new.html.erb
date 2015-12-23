@@ -1,0 +1,14 @@
+<%= render :partial => "slider" %>
+<div class="img-right">
+ <%= image_tag("LAPTOP (1).jpg", alt: "File Name Fancy", :class=>"img-right", size: "2150*2150")%>
+ </div>
+<h1>New Contact</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', contacts_path %>
+<style>
+   div.img-right{
+     float: right;
+   }
+  </style>
